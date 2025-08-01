@@ -90,25 +90,29 @@
 
 		.image-row {
 			display: flex;
-			justify-content: center;  /* Center the row */
-			align-items: center;
-			gap: 1rem;                /* Space between images */
-			margin: 1rem 0;
-			flex-wrap: nowrap;        /* Prevent wrapping */
+			justify-content: center;  /* Center images horizontally */
+			align-items: flex-start;
+			gap: 1.5rem;              /* Bigger spacing between images */
+			margin: 2rem 0;
+			flex-wrap: nowrap;        /* Keep in a single row */
+			overflow-x: auto;         /* Allows scrolling if screen is small */
+			padding-bottom: 0.5rem;   /* Space for scroll on small devices */
 			}
 
 			.image-row img {
-			width: 30%;               /* 3 images fit in one row */
-			max-width: 300px;         /* Optional: Limit image width */
-			border-radius: 10px;
-			object-fit: cover;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			width: 70%;               /* Larger images */
+			max-width: 450px;         /* Cap size for large screens */
+			height: auto;             /* Maintain aspect ratio */
+			object-fit: contain;      /* Keep full image visible and clear */
+			border-radius: 12px;      /* Soft rounded corners */
+			box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for clarity */
 			transition: transform 0.3s ease;
 			}
 
 			.image-row img:hover {
-			transform: scale(1.03);
+			transform: scale(1.05);   /* Slight zoom on hover */
 		}
+
 
 
 
