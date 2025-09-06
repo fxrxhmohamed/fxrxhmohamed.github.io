@@ -3625,6 +3625,8 @@ input, select, textarea {
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
+		border-radius: 12px 12px 0 0;  /* top-left, top-right, bottom-right, bottom-left */
+
 	}
 
 		#nav ul.divided li {

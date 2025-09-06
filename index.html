@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Farah Mohamed Portfolio</title>
+    <title>Farah Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -74,6 +74,7 @@
         flex-wrap: wrap;
         margin: 1.5rem auto 2rem;
         padding: 0.5rem 0.75rem;
+        
       }
       .filter-bar .filter-btn {
         border: 0;
@@ -85,13 +86,78 @@
         color: #fff;
         transition: transform .15s ease, background .2s ease;
       }
-      .filter-bar .filter-btn:hover { transform: translateY(-1px); background: #a2eceb; }
-      .filter-bar .filter-btn.active { background: #4d7cff; }
+      .filter-bar .filter-btn:hover { transform: translateY(-1px); background: #cee1e1;   border-radius: 12px; }
+      .filter-bar .filter-btn.active { background: #73757c;}
 
       /* Category groups */
-      .category-group { margin: 2.5rem 0; }
+      .category-group { margin: 2.5rem 0;
+        border-radius: 12px; }
       .category-group.hidden { display: none; }
       .category-group > header.major h2 { margin-bottom: 0.75rem; }
+
+
+
+
+    /* ===== ABOUT SECTION BOX ===== */
+    .about-section {
+      padding: 4rem 2rem;
+      display:flex;
+      justify-content: center;
+    }
+
+    .about-box {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      max-width: 1150px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .about-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+
+    .about-box p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      margin-top: 2rem;
+    }
+
+    .skills h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .skill-list span {
+      background: #e4e8ff;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .skill-list span:hover {
+      transform: scale(1.05);
+      background: #cbd4ff;
+    }
+
     </style>
   </head>
 
@@ -101,18 +167,57 @@
 
       <!-- Intro -->
       <div id="intro">
-        <h1>Welcome to Farah's Workspace !</h1>
-        <p>
-          Computer Science Student at the Faculty of Computers and Artificial Intelligence, Cairo University <br>
-          Passionate about Data Science,Aspiring AI, and Innovative Technologies <br>
-          <a href="https://github.com/fxrxhmohamed" target="_blank" style="text-decoration: none; font-weight: bold;">View my GitHub ↗</a>
-        </p>
+            <h1>Hi, I'm Farah!</h1>
+            <h2>CS Student & Data Science Enthusiast</h2>
+            <p>
+              Passionate about transforming data into insights and building intelligent
+              systems that solve real-world problems.
+            </p>
         <ul class="actions">
           <li>
             <a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
           </li>
         </ul>
       </div>
+
+
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-box">
+    <h2>About Me</h2>
+    <p>
+      I'm a Computer Science student at the Faculty of Computers and Artificial
+      Intelligence, Cairo University, with a strong passion for data science
+      and machine learning. My journey in technology is driven by curiosity and
+      the desire to create impactful solutions.
+    </p>
+    <p>
+      With hands-on experience in various programming languages and frameworks,
+      I enjoy tackling complex problems and transforming data into actionable
+      insights. My projects reflect my diverse interests, from web development
+      to AI algorithms.
+    </p>
+    <div class="skills">
+      <h3>My Skills</h3>
+      <div class="skill-list">
+        <span>Python</span>
+        <span>Java</span>
+        <span>C++</span>
+        <span>SQL</span>
+        <span>Web Development</span>
+        <span>Web Scrapping</span>
+        <span>Machine Learning</span>
+        <span>Data Cleaning & Preprocessing</span>
+        <span>Data Visualization</span>
+        <span>Data Analysis</span>
+        <span>Git/Github</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
 
       <!-- Header -->
       <header id="header">
@@ -226,17 +331,40 @@
           <header class="major">
             <h2>📊 Data Science & SQL</h2>
           </header>
+          <section class="posts">
+            <article class="post">
+              <header>
+                <h2><a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/SQL_Assignment" target="_blank">SQL & Data Visualization Case Study | Bellabeat User Health Insights</a></h2>
+              </header>
+              <a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/SQL_Assignment" class="image fit" target="_blank"><img src="images/SQLFactExtraction.png" alt="Web Scraper" /></a>
+              <p>Analyzed Bellabeat user activity, sleep, and weight data to uncover meaningful health and lifestyle insights. Leveraged SQL queries, Pandas, and visualizations to: 1) Categorize users by activity consistency (Light, Moderate, Active). 2) Examine sedentary vs active lifestyle patterns. 3) Identify peak hours of daily steps. 4) Explore the relationship between sleep duration and activity. 5) Track weight and BMI trends over time. 6) Created intuitive charts and visualizations to communicate trends and support actionable insights for personalized wellness recommendations and engagement strategies.</p>
+              <ul class="actions special">
+                <li><a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/SQL_Assignment" target="_blank" class="button">View Project</a></li>
+              </ul>
+            </article>
 
-          <article class="post">
-            <header>
-              <h2><a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" target="_blank">Data Cleaning & 📊 Exploratory Data Analysis (EDA) in SQL</a></h2>
-            </header>
-            <a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" class="image fit" target="_blank"><img src="images/DataClean_EDA.png" alt="Data Cleaning and EDA" /></a>
-            <p>This project showcases a comprehensive data cleaning and exploratory data analysis (EDA) workflow using SQL. It uses a dataset on global tech layoffs and demonstrates how to transform raw data into meaningful insights.</p>
-            <ul class="actions special">
-              <li><a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" target="_blank" class="button">View Project</a></li>
-            </ul>
-          </article>
+            <article class="post">
+              <header>
+                <h2><a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" target="_blank">Data Cleaning & Exploratory Data Analysis (EDA) in SQL</a></h2>
+              </header>
+              <a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" class="image fit" target="_blank"><img src="images/DataClean_EDA.png" alt="Data Cleaning and EDA" /></a>
+              <p>This project showcases a comprehensive data cleaning and exploratory data analysis (EDA) workflow using SQL. It uses a dataset on global tech layoffs and demonstrates how to transform raw data into meaningful insights.</p>
+              <ul class="actions special">
+                <li><a href="https://github.com/fxrxhmohamed/Data_Cleaning_EDA/tree/main" target="_blank" class="button">View Project</a></li>
+              </ul>
+            </article>
+
+            <article class="post">
+              <header>
+                <h2><a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/WebScrappig_Assignment" target="_blank">Wuzzuf Engineering Jobs Scraper</a></h2>
+              </header>
+              <a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/WebScrappig_Assignment" class="image fit" target="_blank"><img src="images/WebScrapping.png" alt="Web Scraper" /></a>
+              <p>Built a Python web scraper using Selenium to extract detailed engineering job listings from Wuzzuf, including title, company, location, experience, posting date, skills, job type, and application link. The tool handles dynamic content, pagination (up to 7 pages), and prevents duplicates, saving clean data in CSV and JSON formats. This project showcases skills in web automation, data extraction, and real-time market analysis, providing actionable insights for job seekers and recruiters.</p>
+              <ul class="actions special">
+                <li><a href="https://github.com/fxrxhmohamed/DEPI_Assignments-/tree/main/WebScrappig_Assignment" target="_blank" class="button">View Project</a></li>
+              </ul>
+            </article>
+          </section>
         </section>
 
         <!-- ⚡ Algorithms & Games -->
