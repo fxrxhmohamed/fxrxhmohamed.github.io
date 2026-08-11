@@ -47,23 +47,102 @@
       .image-row {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
-        gap: 1.5rem;
-        margin: 2rem 0;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
         padding-bottom: 0.5rem;
       }
-      .image-row img {
-        width: 70%;
-        max-width: 450px;
-        height: auto;
-        object-fit: contain;
+      .image-row a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 31%;
+        max-width: 150px;
+        height: 180px;
+        background: #f4f5f7;
         border-radius: 12px;
+        overflow: hidden;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease;
       }
-      .image-row img:hover { transform: scale(1.05); }
+      .image-row img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .image-row a:hover { transform: scale(1.05); }
+
+      /* ====== Uniform, laptop-friendly project cards ====== */
+      #main { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+      .category-group .posts,
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .category-group > header.major,
+      .category-group .posts > header.major {
+        grid-column: 1 / -1;
+      }
+
+      .category-group article.post {
+        max-width: 380px;
+        width: 100%;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.1rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        margin: 0;
+      }
+      .category-group article.post header.major { margin-bottom: 0.5rem; }
+      .category-group article.post h2 { font-size: 1.05rem; line-height: 1.3; }
+      .category-group article.post p { font-size: 0.85rem; line-height: 1.5; }
+      .category-group article.post p strong { font-size: 0.85rem; }
+
+      .category-group article.post .image.main,
+      .category-group article.post .image.fit,
+      .category-group article.post .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
+        background: #f4f5f7;
+        aspect-ratio: 16 / 9;
+      }
+      .category-group article.post .image.main img,
+      .category-group article.post .image.fit img,
+      .category-group article.post .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .category-group article.post ul.actions.special {
+        margin-top: auto;
+        padding-top: 0.5rem;
+      }
+      .category-group article.post ul.actions.special .button.large {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
+      /* keep long bullet lists (e.g. Key Insights) from blowing up card height */
+      .category-group article.post ul:not(.actions) {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        padding-left: 1.1rem;
+        max-height: 140px;
+        overflow-y: auto;
+      }
 
       /* ====== Filter bar styles ====== */
       .filter-bar {
@@ -158,6 +237,43 @@
       background: #cbd4ff;
     }
 
+    /* ===== EXPERIENCE / EDUCATION / ACHIEVEMENTS SECTIONS ===== */
+    .info-section { padding: 2rem 2rem 4rem; display: flex; justify-content: center; }
+    .info-box {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      max-width: 1150px;
+      width: 100%;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .info-box h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    .timeline-item { margin-bottom: 1.75rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item h3 { font-size: 1.15rem; color: #222; margin-bottom: 0.15rem; }
+    .timeline-item .meta { color: #777; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .timeline-item ul { color: #444; line-height: 1.6; padding-left: 1.2rem; }
+    .achievement-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .achievement-list span {
+      background: #fff1d6;
+      color: #5a4620;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== INTRO PHOTO ===== */
+    .intro-photo {
+      display: block;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      border: 4px solid #fff;
+    }
+
     </style>
   </head>
 
@@ -167,15 +283,26 @@
 
       <!-- Intro -->
       <div id="intro">
-            <h1>Hi, I'm Farah!</h1>
-            <h2>CS Student & Data Science Enthusiast</h2>
+            <img src="images/Profile.png" alt="Farah Mohamed Abdallah" class="intro-photo" />
+            <h1>Farah Mohamed Abdallah</h1>
+            <h2>Junior Data Engineer | Python &middot; SQL &middot; Apache Spark &middot; ETL Pipelines</h2>
             <p>
-              Passionate about transforming data into insights and building intelligent
-              systems that solve real-world problems.
+              I don't just move data, I build reliable pipelines that turn raw information
+              into data people can trust, use, and build on.
+            </p>
+            <p>
+              I design, build, and automate ETL/ELT pipelines and production-ready datasets
+              that power analytics and machine learning applications.
             </p>
         <ul class="actions">
           <li>
-            <a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
+            <a href="#main" class="button primary">View My Projects</a>
+          </li>
+          <li>
+            <a href="#footer" class="button">Contact Me</a>
+          </li>
+          <li>
+            <a href="FarahMohamed_CV.pdf" class="button" download>Download CV</a>
           </li>
         </ul>
       </div>
@@ -187,34 +314,42 @@
   <div class="about-box">
     <h2>About Me</h2>
     <p>
-      I'm a Computer Science student at the Faculty of Computers and Artificial
-      Intelligence, Cairo University, with a strong passion for data science
-      and machine learning. My journey in technology is driven by curiosity and
-      the desire to create impactful solutions.
+      I'm a Computer Science and Artificial Intelligence student at the Faculty of
+      Computers and Artificial Intelligence, Cairo University (graduating 2026, with
+      Honors), currently working as a DataOps Engineer Trainee at NTI HireReady.
     </p>
     <p>
-      With hands-on experience in various programming languages and frameworks,
-      I enjoy tackling complex problems and transforming data into actionable
-      insights. My projects reflect my diverse interests, from web development
-      to AI algorithms.
+      I specialize in building scalable ETL/ELT pipelines, integrating data from
+      multiple sources, and preparing production-ready datasets for analytics and
+      machine learning using Python, SQL, and Apache Spark.
+    </p>
+    <p>
+      What sets me apart is combining data engineering rigor with hands-on ML/AI
+      project experience — from an AI-powered requirements platform to a sales
+      forecasting system — so I understand both how data moves and how it's
+      ultimately used.
     </p>
     <div class="skills">
-      <h3>My Skills</h3>
+      <h3>Technical Skills</h3>
       <div class="skill-list">
         <span>Python</span>
-        <span>Java</span>
-        <span>C++</span>
         <span>SQL</span>
-        <span>Web Development</span>
-        <span>Python Frameworks</span>
-        <span>Web Scraping</span>
-        <span>Machine Learning</span>
-        <span>Data Cleaning & Preprocessing</span>
-        <span>Data Visualization</span>
-        <span>Data Engineering</span>
-        <span>Data Science</span>
-        <span>Data Analysis</span>
-        <span>Git/Github</span>
+        <span>Java</span>
+        <span>Apache Spark</span>
+        <span>Apache Hadoop</span>
+        <span>ETL / ELT</span>
+        <span>dbt</span>
+        <span>PostgreSQL</span>
+        <span>MySQL</span>
+        <span>MongoDB</span>
+        <span>Docker</span>
+        <span>MLflow</span>
+        <span>FastAPI</span>
+        <span>Flask</span>
+        <span>Power BI</span>
+        <span>Pandas</span>
+        <span>Scikit-learn</span>
+        <span>Git/GitHub</span>
       </div>
     </div>
   </div>
@@ -456,6 +591,90 @@
           </section>
         </section>
       </div>
+
+      <!-- Experience Section -->
+      <section id="experience" class="info-section">
+        <div class="info-box">
+          <h2>Experience</h2>
+
+          <div class="timeline-item">
+            <h3>DataOps Engineer Trainee</h3>
+            <p class="meta">National Telecommunication Institute (NTI) HireReady, Cairo — July 2026 - Present</p>
+            <ul>
+              <li>Built and automated ETL/ELT pipelines to extract, transform, validate, and load data from multiple sources.</li>
+              <li>Designed analytical data models (Star Schema, Snowflake Schema, Fact/Dimension tables) for data warehousing.</li>
+              <li>Developed scalable ETL/ELT workflows with Python, SQL, Pandas, PySpark, and Spark SQL to support analytics and ML applications.</li>
+              <li>Orchestrated batch and event-driven pipelines with automated scheduling, monitoring, and data quality checks.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>IBM Data Scientist Course Trainee</h3>
+            <p class="meta">Digital Egypt Pioneers Initiative, Cairo (Hybrid) — July – December 2025</p>
+            <ul>
+              <li>Cleaned and analyzed 3+ real-world datasets with Python, Pandas, and SQL to surface patterns supporting model training pipelines.</li>
+              <li>Built and deployed supervised ML models integrated into an MLOps pipeline using MLflow for experiment tracking and versioning.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Machine Learning Trainee</h3>
+            <p class="meta">Orange Digital Center, Cairo (Hybrid) — September – October 2024</p>
+            <ul>
+              <li>Completed intensive training in Linear Algebra, Probability, Supervised & Unsupervised Learning, and Neural Networks.</li>
+              <li>Applied ML concepts through hands-on projects, achieving a 100% final score.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Network Security Intern</h3>
+            <p class="meta">Fixed Solutions Company, Cairo — July – November 2023</p>
+            <ul>
+              <li>Configured 20+ firewalls, routers, and switches, improving network security reliability.</li>
+              <li>Implemented firewall policies, VLAN configurations, and basic IDS/IPS setups through hands-on training.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Certifications Section -->
+      <section id="education" class="info-section">
+        <div class="info-box">
+          <h2>Education & Certifications</h2>
+
+          <div class="timeline-item">
+            <h3>Bachelor's Degree in Computer Science and Artificial Intelligence</h3>
+            <p class="meta">Faculty of Computer Science and Artificial Intelligence, Cairo University, Egypt — 2026 · Grade: Excellent (Honors)</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Courses & Certifications</h3>
+            <ul>
+              <li>AI and Machine Learning — Sprints x Microsoft, Sep 2025</li>
+              <li>Machine Learning in Python — Udemy, Sep 2025</li>
+              <li>Introduction to Generative AI Studio — Google Cloud, Sep 2025</li>
+              <li>Sentiment Analysis in Python — DataCamp, Sep 2025</li>
+              <li>Natural Language Processing with spaCy — DataCamp, Oct 2025</li>
+              <li>CS50: Introduction to Computer Science — Harvard University, Nov 2025</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section id="achievements" class="info-section">
+        <div class="info-box">
+          <h2>Achievements</h2>
+          <div class="achievement-list">
+            <span>🎓 Graduating with Honors (Excellent)</span>
+            <span>🏆 100% final score, Orange Digital Center ML training</span>
+            <span>📈 R² = 0.99996 sales forecasting model (LightGBM)</span>
+            <span>🔢 96.7% accuracy on MNIST digit recognition</span>
+            <span>⚡ Cut manual job-data collection by 90% via automation</span>
+            <span>🔐 Configured 20+ network security devices</span>
+          </div>
+        </div>
+      </section>
 
       <!-- Footer -->
       <footer id="footer">
